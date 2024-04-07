@@ -1,0 +1,89 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+}
+
+.container {
+  width: 30rem;
+  height: fit-content;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 5px;
+  position: relative;
+  border: 3px solid #222;
+  box-shadow: -1px -1px 0 #444, -2px -2px 0 #444, -3px -3px 0 #444,
+    -4px -4px 0 #444;
+  transform: skewY(-5deg);
+  transition: 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 1px -1px 0 #444, 2px -2px 0 #444, 3px -3px 0 #444, 4px -4px 0 #444;
+    transform: skewY(5deg);
+  }
+
+  @media (width <= 1111px) {
+    zoom: 0.7;
+  }
+
+  @media (width <= 1111px) and (orientation: portrait) {
+    zoom: 0.54;
+  }
+}
+
+p {
+  line-height: 125%;
+  margin-top: 13px;
+}
+
+.container::before {
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  background-color: inherit;
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  border-right: 3px solid #222;
+  border-bottom: 3px solid #222;
+  transform: translate(-50%, 1.2rem) rotate(45deg);
+}
+
+.container::after {
+  content: '';
+  width: 7rem;
+  height: 0.5rem;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-right: 3px solid #222;
+  border-bottom: 3px solid #222;
+  transform: translate(-50%, 3.8rem);
+  filter: blur(5px);
+}
